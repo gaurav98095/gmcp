@@ -13,9 +13,15 @@ gmcp automatically converts any FastAPI server into an MCP (Model Context Protoc
 - ⚡ **Fast**: Efficient async HTTP client built on httpx
 
 ## Installation
+```bash
+# Install library
+pip install gmcp
+```
 
 ```bash
 # Install in development mode
+git clone https://github.com/gaurav98095/gmcp.git
+cd gmcp
 pip install -e .
 ```
 
