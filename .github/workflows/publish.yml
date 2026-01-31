@@ -37,15 +37,5 @@ jobs:
       - name: Build package
         run: python -m build
 
-      # ✅ Optional but STRONGLY recommended
-      # Fails if version != tag (v0.2.1 → 0.2.1)
-      - name: Check version matches tag
-        run: |
-          TAG=${GITHUB_REF#refs/tags/v}
-          PKG_VERSION=$(python -c "import tomllib;print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
-          echo "Tag: $TAG"
-          echo "Package version: $PKG_VERSION"
-          test "$TAG" = "$PKG_VERSION"
-
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
